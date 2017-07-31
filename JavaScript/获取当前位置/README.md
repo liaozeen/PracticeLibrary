@@ -7,5 +7,5 @@
 2.打开myloc.html
 
 ### 知识点
-- HTNML5 地理定位API
+- HTML5 地理定位API
 - 事件错误处理程序

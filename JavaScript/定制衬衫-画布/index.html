@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>定制衬衫</title>
+        <style>
+        	canvas{border: 1px solid black;}
+        </style>
+        <script src="tweetshit.js"></script>
+    </head>
+    <body>
+    	<h1>定制衬衫</h1>
+    	<canvas width="600" height="200" id="tshirtCanvas"></canvas>
+    	<form>
+			<p>
+				<label for="backgroundColor">选择底色：</label>
+				<select id="backgroundColor">
+					<option value="white" selected="selected">白色</option>
+					<option value="black">黑色</option>
+				</select>
+			</p>
+			<p>
+				<label for="shape">选择圆还是方：</label>
+				<select id="shape">
+					<option value="none" selected="selected">都不选</option>
+					<option value="circles">圆的</option>
+					<option value="squares">方的</option>
+				</select>
+			</p>
+			<p>
+				<input type="button" id="previewButton" value="预览">
+			</p>
+    	</form>
+    </body>
+</html>

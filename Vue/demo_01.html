@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/demo_01.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="form-group">
+			<label>姓名：</label>
+			<input type="text" v-model="newPerson.name">
+		</div>
+		<div class="form-group">
+			<label>年龄：</label>
+			<input type="text" v-model="newPerson.age">
+		</div>
+		<div class="form-group">
+			<label>性别：</label>
+			<select v-model="newPerson.sex">
+				<option>男</option>
+				<option>女</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label></label>
+			<button @click='add'>创建</button>
+		</div>
+		<table>
+		<thead>
+			<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>删除</th>
+			</tr>
+		</thead>
+		 <tbody>
+                <tr v-for="(person,index) in persons">
+                    <td>{{ person.name }}</td>
+                    <td>{{ person.age }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td><button @click="deletePerson(index)">Delete</button></td>
+                </tr>
+            </tbody>
+		</table>
+	</div>
+	<script>
+		var app = new Vue({
+			el:'#app',
+			data:{
+				newPerson: {
+                    name: '',
+                    age: 0,
+                    sex: '男'
+                },
+				persons:[
+				{name:'Jack',age:30,sex:'男'},
+				{name:'Bill',age:26,sex:'男'},
+				{name:'Tracy',age:22,sex:'女'},
+				{name:'Chris',age:36,sex:'男'},
+				]
+			},
+			methods:{
+				add:function(){
+					this.persons.push(this.newPerson);
+					this.newPerson = {
+	                    name: '',
+	                    age: 0,
+	                    sex: '男'
+               		 };
+				},
+				deletePerson:function(index){
+					this.persons.splice(index,1);
+				}
+			}
+		});
+	</script>
+</body>
+</html>
+ git config --global user.email "liaogogogo@qq.com"
+git config --global user.name "liaozeen"

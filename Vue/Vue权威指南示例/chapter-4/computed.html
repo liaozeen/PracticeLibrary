@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>计算属性</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+		<h2>计算属性</h2>
+		A值：
+		<input type="text" v-model="a">
+		B值：
+		<input type="text" v-model="b">
+		<br>
+		A={{a}},B={{b}}
+		<br>
+		<br>
+		当更改A+B的值时，A和B的值会自动更新<br>
+		A+B=<input type="text" v-model="ab">
+	</div>
+	<div id="example2">
+		<h2>计算属性缓存</h2>
+		<input type="text" v-model="welcome">
+		<br>
+		{{date}}
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			a:'这是A值',
+			b:'这是B值'
+		},
+
+		computed:{
+			ab:{
+				//一个计算属性的getter
+				get:function(){
+				//‘this’指向example实例
+				return this.a + this.b;
+		        },
+		        //一个计算属性的setter
+		        set:function(newVal){
+		        	this.a = newVal.substring(0,newVal.length/2)
+		        	this.b = newVal.substring(newVal.length/2,newVal.length);
+		        }
+			}
+	    }
+	});
+
+	var example2 =new Vue({
+		el:'#example2',
+		data:{
+			welcome:'欢迎加入我们'
+
+		},
+		computed:{
+			date:function(){
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var s=today.getSeconds();
+				return h+":"+m+":"+s+'--'+this.welcome;
+			}
+	    }
+	});
+</script>
+</body>
+</html>

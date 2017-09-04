@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>替换内置过滤器</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+	   <h2>字母操作</h2>
+	   <input type="text" v-model="text">
+	   <h3>首字母转为大写</h3>
+	   {{text| capitalize}}
+	   <br>
+	   <h3>所有字母转为大写</h3>
+	   {{text| uppercase}}
+	   <br>
+	   <h3>所有字母转为小写</h3>
+	   {{text| lowercase}}
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			text:''
+		},
+		filters:{
+			capitalize: function (value) {
+			     if (!value) return ''
+			     value = value.toString()
+			     return value.charAt(0).toUpperCase() + value.slice(1)
+			},
+			uppercase:function(value){
+				if (!value) return ''
+				value = value.toString()
+				return value.toUpperCase()
+			},
+			lowercase:function(value){
+				if (!value) return ''
+				value = value.toString()
+				return value.toLowerCase()
+			},
+
+		}
+	});
+
+</script>
+</body>
+</html>

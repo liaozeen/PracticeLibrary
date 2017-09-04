@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自定义过滤器</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+	   <input type="text" v-model="text">
+	   <h3>单个参数-字符串反转</h3>
+	   {{text| reverse}}
+	   <br>
+	   <h3>多参数-首尾添加字符串</h3>
+	   {{text| wrap( 'before ' ,' after')}}
+	   <br>
+	   <h3>动态参数-重复</h3>
+	   {{text| concat(text)}}
+	</div>
+	<script>
+	Vue.filter('reverse',function(value){
+		return value.split('').reverse().join('');
+	});
+
+	Vue.filter('wrap',function(value,begin,end){
+		if (!value) return ''
+		return begin + value + end;
+	});
+
+	Vue.filter('concat',function(value,input){
+		if (!value) return ''
+		return value +'-'+input;
+	});
+
+	var example = new Vue({
+		el:'#example',
+		data:{
+			text:''
+		}
+	});
+</script>
+</body>
+</html>

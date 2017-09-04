@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-model指令</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+		<form>
+			姓名：
+			<input type="text" v-model="name">
+			<br/>
+			<input type="radio" value="男" v-model="sex">
+			<label >男</label>
+			<input type="radio"  value="女" v-model="sex">
+			<label >女</label>
+			<br/>
+			<input type="checkbox" value="book" v-model="interest">
+			<label >阅读</label>
+			<input type="checkbox" value="swim" v-model="interest">
+			<label >游泳</label>
+			<input type="checkbox" value="game" v-model="interest">
+			<label >游戏</label>
+			<input type="checkbox" value="song" v-model="interest">
+			<label >唱歌</label>
+			<br/>
+			身份：
+			<select v-model="identity">
+				<option value="teacher" selected>教师</option>
+				<option value="doctor">医生</option>
+				<option value="lawyer">律师</option>
+			</select>
+			<br/><br/>
+			姓名：{{name}}
+			<br>
+			性别：{{sex}}
+			<br>
+			兴趣：{{interest}}
+			<br>
+			身份：{{identity}}
+		</form>
+	</div>
+
+	<div id="example2">
+		<!-- 在2.0，lazy 和 number 参数现在以修饰符的形式使用-->
+		<input v-model.lazy="msg"><br/>
+		{{msg}}
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			name:"",
+			sex:"",
+			interest:[],
+			identity:""
+		}
+	});
+	var example2 = new Vue({
+		el:'#example2',
+		data:{
+			msg:'内容在change事件后才改变'
+		}
+	});
+	</script>
+</body>
+</html>

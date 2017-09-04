@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-if指令</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+		<p v-if='greeting'>hello</p>
+		<!-- 把<template>元素当做包装元素，
+		并在其上使用v-if，
+		最终的渲染结果不会包含template元素 -->
+		<template v-if='ok'>
+			<h1>Title</h1>
+			<p>Paragraph 1</p>
+			<p>Paragraph 2</p>
+		</template>
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			greeting:true,
+			ok:true
+		}
+	});
+</script>
+</body>
+</html>

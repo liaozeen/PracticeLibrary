@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-show指令</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<input type="text" v-model="message" placeholder="edit me">
+	<div id="example">
+		<p v-show="greeting">Hello!</p>
+	</div>
+	<script>
+		var example2 = new Vue({
+			el:'#example',
+			data:{
+				greeting:false
+			}
+		});
+	</script>
+</body>
+</html>

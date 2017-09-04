@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-for指令</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+		<ul>
+			<li v-for="(item,index) in items">
+			{{index}} - {{parentMessage}} - {{item.msg}}
+			</li>
+		</ul>
+	</div>
+
+	<div id="example2">
+		<ul>
+			<!--
+			<li v-for="value in primitiveValues">
+			{{$key}} - {{value}}
+			</li>
+			<li>===</li>
+			-->
+			<li v-for="(item,key) in objectValues">
+			{{key}} - {{item.msg}}
+			</li>
+		</ul>
+	</div>
+	<!--
+	<div id="example3">
+		<input type="text" v-model="searchText">
+		<ul>
+			<li v-for="user in users | filterBy searchText in 'name'">{{user.name}}</li>
+		</ul>
+	</div>
+	-->
+
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			parentMessage:'滴滴',
+			items:[
+				{msg:"顺风车"},
+				{msg:"专车"}
+			]
+		}
+	});
+
+	var example2 = new Vue({
+		el:'#example2',
+		data:{
+			primitiveValues:{
+				FirstName:'DIDI',
+				LastName:'FE',
+				Age:4
+			},
+			objectValues:{
+				one:{
+					msg:'Hello'
+				},
+				two:{
+					msg:'DIDI FE'
+				},
+			}
+		}
+	});
+	/*
+	var example3 = new Vue({
+		el:'#example3',
+		data:{
+			users:[
+				{
+					name:'快车',
+					tag:'1'
+				},
+				{
+					name:'出租车',
+					tag:'2'
+				},
+				{
+					name:'顺风车',
+					tag:'3'
+				},
+				{
+					name:'专车',
+					tag:'4'
+				},
+			]
+		}
+	})*/
+	</script>
+</body>
+</html>

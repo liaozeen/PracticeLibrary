@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单-checkbox</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+	   <input type="checkbox" id="flash" value="flash" v-model="bizLines">
+	   <label for="flash">快车</label>
+	   <input type="checkbox" id="premium" value="premium" v-model="bizLines">
+	   <label for="premium">专车</label>
+	   <input type="checkbox" id="bus" value="bus" v-model="bizLines">
+	   <label for="bus">巴士</label>
+	   <br>
+	   <span>Checked lines:{{bizLines}}</span>
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			bizLines:[]
+		}
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单-select</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+	   <h2>单选</h2>
+	   <select v-model="bizLine">
+	   	 <option value="快车" selected>快车</option>
+	   	 <option value="专车">专车</option>
+	   	 <option value="巴士">巴士</option>
+	   </select>
+	   <span>Selected:{{bizLine}}</span>
+	</div>
+	<div id="example2">
+	   <h2>多选</h2>
+	   <select v-model="bizLine" multiple>
+	   	 <option value="快车" selected>快车</option>
+	   	 <option value="专车">专车</option>
+	   	 <option value="巴士">巴士</option>
+	   </select>
+	   <span>Selected:{{bizLine}}</span>
+	</div>
+	<div id="example3">
+	   <h2>动态生成选项</h2>
+	   <select v-model="bizLine">
+	   	 <option v-for="option in options" v-bind:value="option.value" >
+	   	 	{{option.text}}
+	   	 </option>
+	   </select>
+	   <span>bizLine:{{bizLine}}</span>
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			bizLine:''
+		}
+	});
+	var example = new Vue({
+		el:'#example2',
+		data:{
+			bizLine:[]
+		}
+	});
+	var example = new Vue({
+		el:'#example3',
+		data:{
+			bizLine:'flash',
+			options:[
+				{text:'快车',value:'flash'},
+				{text:'专车',value:'premium'},
+				{text:'巴士',value:'bus'},
+			]
+		}
+	});
+</script>
+</body>
+</html>

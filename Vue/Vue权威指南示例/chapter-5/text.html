@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单-text</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+	 <span>Welcome {{name}} join DDFE</span>
+	 <br>
+	 <input type="text" v-model="name" placeholder="join DDFE">
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			name:''
+		}
+	});
+</script>
+</body>
+</html>

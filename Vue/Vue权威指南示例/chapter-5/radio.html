@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表单-radio</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<div id="example">
+	   <input type="radio" id="flash" value="快车" v-model="bizLine">
+	   <label for="flash">快车</label>
+	   <input type="radio" id="premium" value="专车" v-model="bizLine">
+	   <label for="premium">专车</label>
+	   <input type="radio" id="bus" value="巴士" v-model="bizLine">
+	   <label for="bus">巴士</label>
+	   <br>
+	   <span>Picked:{{bizLine}}</span>
+	</div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			bizLine:''
+		}
+	});
+</script>
+</body>
+</html>

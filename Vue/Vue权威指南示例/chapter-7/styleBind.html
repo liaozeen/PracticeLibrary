@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>style绑定</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 直接绑定对象 -->
+	<div id="example" v-bind:style="{
+	color:didiColor,fontSize:fontSize + 'px'}"></div>
+	<!-- 绑定样式对象 -->
+	<div id="example2"  v-bind:style="ddfe"></div>
+
+	<!-- 绑定返回对象的计算属性 -->
+	<div id="example3"  v-bind:style="ddfe"></div>
+
+	<!-- 绑定数组(无效？) -->
+	<div id="example4"  v-bind:style="[ddfe,didiFamily]"></div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			didiColor:'orange',
+			fontSize:30
+		}
+	});
+
+	var example2 = new Vue({
+		el:'#example2',
+		data:{
+			ddfe:{
+				color:'orange',
+				fontSize:'13px'
+			}
+		}
+	});
+
+	var example3 = new Vue({
+		el:'#example3',
+		data:{
+			didiAge:4,
+			didiMember:6000
+		},
+		computed:{
+			ddfe:function(){
+				return {
+					color:this.didiAge>3?'orange':'green',
+					fontSize:this.didiMember>1000?'20px':'10px'
+				};
+			}
+		}
+	});
+
+	var example4 = new Vue({
+		el:'#example4',
+		data:{
+			ddfe:'didi',
+			didiFamily:'didi-family'
+		}
+	});
+</script>
+</body>
+</html>

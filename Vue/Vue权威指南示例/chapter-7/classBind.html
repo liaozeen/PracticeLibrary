@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class绑定</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 直接绑定对象 -->
+	<div id="example" class="static" v-bind:class="{
+	'didi-orange':isRipe,'didi-green':isNotRipe
+	}"></div>
+	<!-- 绑定对象 -->
+	<div id="example2"  v-bind:class="ddfe"></div>
+
+	<!-- 绑定返回对象的计算属性 -->
+	<div id="example3"  v-bind:class="ddfe"></div>
+
+	<!-- 绑定数组 -->
+	<div id="example4"  v-bind:class="[didiHandsome,didiBeautiful]"></div>
+	<script>
+	var example = new Vue({
+		el:'#example',
+		data:{
+			isRipe:true,
+			isNotRipe:false
+		}
+	});
+
+	var example2 = new Vue({
+		el:'#example2',
+		data:{
+			ddfe:{
+				'didi-orange':true,
+				'didi-green':true
+			}
+		}
+	});
+
+	var example3 = new Vue({
+		el:'#example3',
+		data:{
+			didiAge:4,
+			didiMember:6000
+		},
+		computed:{
+			ddfe:function(){
+				return {
+					'didi-orange':this.didiAge>3?true:false,
+					'didi-green':this.didiMember>1000?true:false
+				};
+			}
+		}
+	});
+
+	var example4 = new Vue({
+		el:'#example4',
+		data:{
+			didiHandsome:'didi-handsome',
+			didiBeautiful:'didi-beautiful'
+		}
+	});
+</script>
+</body>
+</html>

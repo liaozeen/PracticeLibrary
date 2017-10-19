@@ -1,0 +1,59 @@
+<!doctype HTML>
+<html>
+<head>
+<title>防止margin重叠</title>
+<style type="text/css">
+    #container{
+        display: flex;
+    }
+    .box {
+        width:250px;
+        height: 420px;
+        margin-left: 10px;
+        background:rgb(41, 201, 41) ;
+    }
+    .bfc {
+        display:inline-block;
+    }
+    #green {
+        margin:10px 10px 10px 10px;
+        background:lightgreen;
+        height:100px;
+        width:100px;
+    }
+    #blue {
+        margin:10px 10px 10px 10px;
+        background:lightblue;
+        height:100px;
+        width:100px;
+    }
+    #red {
+        margin:10px 10px 10px 10px;
+        background:pink;
+        height:100px;
+        width:100px;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="container">
+    <div class="box">
+        <h4>垂直方向的margin发生了重叠</h4>
+        <div id="green"></div>
+        <div id="blue"></div>
+        <div id="red"></div>        
+    </div>
+    <div class="box">
+        <h4>防止垂直方向的margin重叠</h4>
+        <div id="green"></div>
+        <div class="bfc">
+            <div id="blue"></div>
+        </div>
+        <div id="red"></div>        
+    </div>
+</div>
+
+</body>
+</html>

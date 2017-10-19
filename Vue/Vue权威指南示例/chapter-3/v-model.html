@@ -49,17 +49,21 @@
 	<script>
 	var example = new Vue({
 		el:'#example',
-		data:{
-			name:"",
-			sex:"",
-			interest:[],
-			identity:""
-		}
+		data(){
+			return{
+				name:"",
+				sex:"",
+				interest:[],
+				identity:""
+			}
+		}		
 	});
 	var example2 = new Vue({
 		el:'#example2',
-		data:{
-			msg:'内容在change事件后才改变'
+		data(){
+			return {
+				msg:'内容在change事件后才改变。'
+			}
 		}
 	});
 	</script>

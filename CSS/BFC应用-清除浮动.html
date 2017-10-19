@@ -1,0 +1,48 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>清除浮动</title>
+        <style>
+        
+            .box1 {
+                background: rgb(238, 56, 156);
+            }
+            .box2 {
+                overflow: hidden;
+                background: rgb(219, 26, 236);
+            }
+            .blue {
+                margin:10px 10px 10px 10px;
+                background:lightblue;
+                height:100px;
+                width:100px;
+                float: left;
+            }
+            .green {
+                margin:10px 10px 10px 10px;
+                background:lightgreen;
+                height:100px;
+                width:100px;
+                float: left;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="box1">
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div class="box2">
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+        </div>
+        <p>在左边的案例中，父容器不会有任何高度，它将不会包含已浮动的子元素。
+        在右边的案例中，通过添加overflow：hidden使父元素变成BFC。
+        该容器将包含浮动的子元素，它的高度将扩展到可以包含它的子元素。
+        在这个BFC，这些子元素将回到页面的常规文档流。
+        </p>
+    </body>
+</html>

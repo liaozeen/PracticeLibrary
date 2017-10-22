@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+    <head>
+        <title>三栏布局-左右定宽-中间自适应</title>
+        <style>
+            .title{
+                width: 100px;
+                height: 25px;
+                line-height: 25px;
+                border-radius: 5px;
+                background: rgb(230, 84, 26);
+                color: #fff;
+                text-align: center;
+                font-weight: 700;
+            }
+            .box{
+                width: 100%;
+                margin: 10px 0;
+            }
+            .left,.center,.right{
+                height: 70px;
+                border-radius: 5px;
+            }
+            .left{
+                background: lightblue;
+            }
+            .center{
+                background: lightcoral;
+                text-align: center;
+            }
+            .right{
+                background: lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 浮动布局 -->
+        <div class="title">浮动布局</div>
+        <style> 
+            .float .left{
+                float: left;
+                width: 100px;
+            }
+            .float .right{
+                float:right;
+                width: 100px;
+            }
+            .float .center{
+                margin: 0 120px;
+            }
+        </style>
+        <div class="box float">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="center"></div>
+        </div>
+        <!-- 绝对定位布局 -->
+        <div class="title">绝对定位布局</div>
+        <style> 
+            .absolute {
+                position: relative;
+            }
+            .absolute .left{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+            }
+            .absolute .right{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100px;
+            }
+            .absolute .center{
+               margin: 0 120px;
+            }
+        </style>
+        <div class="box absolute">
+            <div class="left"></div>
+            <div class="center"> </div>
+            <div class="right"></div>
+        </div>
+        <!-- flex布局 -->
+        <div class="title">flex布局</div>
+        <style> 
+            .flex {
+                display: flex;
+            }
+            .flex .left{
+                width: 100px;
+            }
+            .flex .right{
+                width: 100px;
+            }
+            .flex .center{
+               flex: 1;
+               margin: 0 20px;
+            }
+        </style>
+        <div class="box flex">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+        <!-- table布局 -->
+        <div class="title">table布局</div>
+        <style> 
+            .table {
+                display: table;
+                width: 100%;
+            }
+            .table .left{
+                display: table-cell;
+                width: 100px;
+                margin-right: 20px;
+            }
+            .table .right{
+                display: table-cell;
+                width: 100px;
+
+            }
+            .table .wrap{
+                display: table-cell;
+                padding: 0 20px;
+            }
+        </style>
+        <div class="box table">
+            <div class="left"></div>
+            <div class="wrap">
+                <div class="center"></div>
+            </div>
+            <div class="right"></div>
+        </div>
+        <!-- grid布局 -->
+        <div class="title">grid布局</div>
+        <style> 
+            .grid {
+                display: grid;
+                grid-template-columns: 100px 1fr 100px;
+                grid-gap:20px;
+            }
+        </style>
+        <div class="box grid">
+            <div class="left"></div>
+            <div class="center"></div>
+            <div class="right"></div>
+        </div>
+    </body>
+</html>

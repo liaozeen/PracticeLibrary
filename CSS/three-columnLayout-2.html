@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <title>三栏布局-上下定高-中间自适应</title>
+        <style>
+            html,body{
+                height: 100%;
+            }
+            .box{
+                float: left;
+                width: 100px;
+                margin-right: 20px;
+            }
+            .up,.center,.down{
+                width: 100px;
+                border-radius: 5px;
+            }
+            .up{
+                height: 100px;
+                background: lightblue;
+            }
+            .center{
+                background: lightcoral;
+            }
+            .down{
+                height: 100px;
+                background: lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 绝对定位布局 -->
+        <style> 
+            .absolute{
+                position: relative;
+                height: 100%;
+            }
+            .absolute .up{
+                position: absolute;
+                top: 0;
+            }
+            .absolute .down{
+                position: absolute;
+                bottom: 0;
+            }
+            .absolute .center {
+                position: absolute;
+                top: 120px;
+                bottom: 120px;
+            }
+        </style>
+        <div class="box absolute">
+            <div class="up"></div>
+            <div class="center">绝对定位布局</div>
+            <div class="down"></div>
+        </div> 
+        <!-- table布局 -->
+        <style> 
+            .table {
+                display: table;
+                width: 100px;
+                height: 100%; 
+            }
+            .table .up{
+                display: table-row;
+                padding-top: -20px;
+            }
+            .table .down{
+                display: table-row;
+            }
+            .table .center{
+                display: table-row;
+            }
+            .cell{
+                display: table-cell;
+                border-radius: 5px;
+            }
+            .table .space{
+                display: table-row;
+                height: 20px;
+            }
+        </style>
+        <div class="box table">
+            <div class="up">
+                <div class="cell"></div>
+            </div>
+            <div class="space"></div>
+            <div class="center">
+                <div class="cell">table布局</div>
+            </div>
+            <div class="space"></div>
+            <div class="down">
+                <div class="cell"></div>
+            </div>
+        </div>
+        <!-- flex布局 -->
+        <style> 
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                width: 100px;
+                height: 100%;
+            }
+            .flex .up{
+                
+            }
+            .flex .down{
+             
+            }
+            .flex .center{
+                flex-grow: 1;
+                margin: 20px 0;
+            }
+        </style>
+        <div class="box flex">
+            <div class="up"></div>
+            <div class="center">flex布局</div>
+            <div class="down"></div>
+        </div>
+        <!-- grid布局 -->
+            <style> 
+                .grid {
+                    display: grid;
+                    grid-template-columns: 100px;
+                    grid-template-rows: 100px auto 100px;
+                    grid-gap:20px;
+                }
+                .grid .center{
+                   
+                }
+            </style>
+            <div class="box grid">
+                <div class="up"></div>
+                <div class="center">
+                   <div class="content">
+                        <p>grid布局</p>
+                   </div>
+                </div>
+                <div class="down"></div>
+            </div>
+    </body>
+</html>

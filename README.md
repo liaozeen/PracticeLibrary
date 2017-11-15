@@ -2,8 +2,8 @@
 
 布局类：
 - [元素居中](https://liaozeen.github.io/PracticeLibrary/CSS/layout/%E5%85%83%E7%B4%A0%E5%B1%85%E4%B8%AD.html)
-- [两栏布局-左定宽，右自适应](https://liaozeen.github.io/PracticeLibrary/CSS/layout/two-columnLayout.html)
-- [两栏布局-左自适应，右定宽](https://liaozeen.github.io/PracticeLibrary/CSS/layout/two-columnLayout2.html)
+- [两栏布局-左右](https://liaozeen.github.io/PracticeLibrary/CSS/layout/two-columnLayout.html)
+- [两栏布局-上下](https://liaozeen.github.io/PracticeLibrary/CSS/layout/two-columnLayout2.html)
 - [三栏布局-左右定宽-中间自适应](https://liaozeen.github.io/PracticeLibrary/CSS/layout/three-columnLayout-1.html)
 - [三栏布局-上下定高-中间自适应](https://liaozeen.github.io/PracticeLibrary/CSS/layout/three-columnLayout-2.html)
 

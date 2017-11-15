@@ -1,0 +1,129 @@
+<!doctype HTML>
+<html>
+<head>
+<title>元素居中</title>
+<style type="text/css">
+    *{
+        margin: 0;
+    }
+    .bigBox{
+        width: 100%;
+        height: 350px;
+        margin-bottom: 5px;
+        background: limegreen;
+    }
+    .title{
+        background: rgb(7, 145, 60);
+        color: #fff;
+        line-height:40px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <!-- 使用text-align水平居中 -->
+    <style>
+        .box1{
+            text-align: center;
+        }
+    </style>
+    <div class="title">text-align水平居中</div>
+    <div class="bigBox box1">
+        <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+    </div>
+
+    <!-- 使用 margin: auto 居中 -->
+    <style>
+        .box2 img{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+    <div class="title">margin: auto 居中</div>
+    <div class="bigBox box2">
+        <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+    </div>
+
+    <!-- 使用table-cell居中 -->
+    <style>
+        .box3{
+            display: table;
+        }
+        .box3 .center{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+    <div class="title">table-cell居中</div>
+    <div class="bigBox box3">
+        <div class="center">
+            <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+        </div>
+    </div>
+
+    <!-- 使用absolute定位居中 -->
+    <style>
+        .box4{
+            position: relative;
+        }
+        .box4 img{
+            position: absolute;
+            margin: auto;
+            top: 0; left: 0;
+            bottom: 0; right: 0;
+        }
+    </style>
+    <div class="title">absolute定位居中</div>
+    <div class="bigBox box4">
+        <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+    </div>
+
+    <!-- 使用translate居中 -->
+    <style>
+        .box5{
+            position: relative;
+        }
+        .box5 img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <div class="title">translate居中</div>
+    <div class="bigBox box5">
+        <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+    </div>
+      
+    <!-- 使用Flexbox居中 -->
+    <style>
+        .box6{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div class="title">Flexbox居中</div>
+    <div class="bigBox box6">
+        <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+    </div>
+
+    <!-- 使用calc居中 -->
+    <!-- 图片的尺寸为452*254 -->
+    <style>
+        .box7{
+            position: relative;
+        }
+        .box7 img{
+            position: absolute;
+            top: calc(50% - 127px);
+            left: calc(50% - 226px);
+        }
+    </style>
+    <div class="title">calc居中</div>
+    <div class="bigBox box7">
+        <img src="http://images-new.123rf.com.cn/450wm/zqmai/zqmai1501/zqmai150100052.jpg">
+    </div>
+</body>
+</html>

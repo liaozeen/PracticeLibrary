@@ -7,21 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         #video{
-            width: 480px;
-            height: 320px;
-        }
-        #caputure{
-
+            width: 375px;
+            height: 600px;
         }
         #canvas{
-            width: 480px;
-            height: 320px;
+            width: 375px;
+            height: 600px;
         }
     </style>
 </head>
 <body>
-    <video id="video" autoplay></video>
-    <button id="caputure">拍照</button>
+    <video id="video" class="caputure" autoplay></video>
+    <span>点下上面的区域拍个照</sapn>
     <canvas id="canvas"></canvas>
     <script>
         // 访问用户媒体设备的兼容方法
@@ -62,14 +59,14 @@
         if(navigator.mediaDevices.getUserMedia || navigator.getUserMedia || 
            navigator.webkitGetUserMedia || navigator.mozGetUserMedia){
                // 调用用户媒体设备，访问摄像头
-            getUserMedia({video:{width:480,height:320}},success,error);
+            getUserMedia({video:{width:370,height:600}},success,error);
         }else{
             alert("您的浏览器不支持访问媒体设备！")
         }
 
         // 绑定拍照按钮的单击事件
-        document.getElementById("caputure").addEventListener("click", function(){
-            context.drawImage(video,0,0,240,160);//将video画面在canvas上绘制出来
+        document.getElementsByClassName("caputure").addEventListener("click", function(){
+            context.drawImage(video,0,0,370,600);//将video画面在canvas上绘制出来
         });
     </script>
 </body>

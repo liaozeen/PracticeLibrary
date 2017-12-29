@@ -18,7 +18,7 @@
 </head>
 <body>
     <video id="video" class="caputure" autoplay></video>
-    <span>点下上面的区域拍个照</sapn>
+    <button id="caputure">拍照</button>
     <canvas id="canvas"></canvas>
     <script>
         // 访问用户媒体设备的兼容方法
@@ -65,7 +65,7 @@
         }
 
         // 绑定拍照按钮的单击事件
-        document.getElementsByClassName("caputure").addEventListener("click", function(){
+        document.getElementById("caputure").addEventListener("click", function(){
             context.drawImage(video,0,0,370,600);//将video画面在canvas上绘制出来
         });
     </script>
